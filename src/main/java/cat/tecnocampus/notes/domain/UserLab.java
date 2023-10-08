@@ -3,6 +3,7 @@ package cat.tecnocampus.notes.domain;
 import cat.tecnocampus.notes.domain.exception.NotEditableNote;
 import cat.tecnocampus.notes.domain.exception.NoteNotOwnedException;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ public class UserLab {
     private String username;
     private String name;
     private String secondName;
+    @Email
     @Id
     private String email;
 
