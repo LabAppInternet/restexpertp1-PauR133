@@ -1,0 +1,47 @@
+### get all users
+GET http://localhost:8080/users
+
+### get josep
+GET http://localhost:8080/users/josep@tecnocampus.cat
+
+### get unexisting user
+GET http://localhost:8080/users/xxx@tecnocampus.cat
+
+### get josep's owned notes
+GET http://localhost:8080/users/josep@tecnocampus.cat/ownedNotes
+
+### get alfredo's allowed edit notes
+GET http://localhost:8080/users/alfredo@tecnocampus.cat/allowedEditNotes
+
+### create a new note for josep
+POST http://localhost:8080/users/josep@tecnocampus.cat/notes
+content-type: application/json
+
+{
+  "title": "Creating a new note for testing",
+  "content": "I'm creating a new note for testing. Hope it works!!!"
+}
+
+### editing an existing note
+PUT http://localhost:8080/users/josep@tecnocampus.cat/notes
+content-type: application/json
+
+{
+  "title": "We're having fun",
+  "content": "ab internet is a lot of fun. We are learning so many things. And this year is even better!!!"
+}
+
+### editing an UNexisting note
+PUT http://localhost:8080/users/josep@tecnocampus.cat/notes
+content-type: application/json
+
+{
+  "title": "So borrowing",
+  "content": "ab internet is a lot of fun. We are learning so many things. And this year is even better!!!"
+}
+
+### alowing a user to edit a note
+PUT http://localhost:8080/users/josep@tecnocampus.cat/allowed/alfredo@tecnocampus.cat/We're having fun
+
+### deleting a note
+DELETE http://localhost:8080/users/josep@tecnocampus.cat/notes/To be deleted
